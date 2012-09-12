@@ -1,6 +1,3 @@
-from wsgi import *
-from django.contrib.auth.models import User
-
 import os
 PASTA = os.path.dirname(__file__)
 
@@ -105,14 +102,6 @@ ROOT_URLCONF = 'urls'
 
 WSGI_APPLICATION = 'wsgi.application'
 
-#Criar Usuario
-u, created = User.objects.get_or_create(username='admin')
-if created:
-    u.set_password('P@s$w0rd1')
-    u.is_superuser = True
-    u.is_staff = True
-    u.save()
-
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, "templates"),
@@ -129,6 +118,7 @@ DJANGO_APPS = (
 
 ADD_APPS = (
     'django.contrib.admin',
+    'auto_create_admin',
 )
 
 PROJETO_APPS = (
