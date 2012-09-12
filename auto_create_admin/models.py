@@ -17,7 +17,7 @@ def create_gladson(app, created_models, verbosity, **kwargs):
   except auth_models.User.DoesNotExist:
     assert auth_models.User.objects.create_superuser('gladson', 'gladsonbrito@gmail.com', 'gladson')
   else:
-    print 'Gladson user already exists.'
+    print 'Gladson, já existe.'
 
 signals.post_syncdb.connect(create_gladson,
     sender=auth_models, dispatch_uid='common.models.create_gladson')
