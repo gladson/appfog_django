@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#encoding: utf-8
 from django.conf import settings
 from django.contrib.auth import models as auth_models
 from django.contrib.auth.management import create_superuser
